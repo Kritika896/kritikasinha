@@ -1,5 +1,5 @@
 
-import { ArrowRight, Github, Linkedin, Mail, Phone } from "lucide-react";
+import { ArrowRight, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -39,24 +39,8 @@ const Hero = () => {
             <span>Based in Bengaluru</span>
           </div>
           
-          {/* Social Links */}
+          {/* Social Links - Removed phone and email, kept only LinkedIn and GitHub */}
           <div className="flex flex-wrap gap-4">
-            <a 
-              href="tel:+919142134173" 
-              className="flex items-center gap-2 text-white hover:text-cyan-300 transition-colors"
-              aria-label="Phone"
-            >
-              <Phone size={18} />
-              <span>+91 9142134173</span>
-            </a>
-            <a 
-              href="mailto:kritika.bengaluru@gmail.com" 
-              className="flex items-center gap-2 text-white hover:text-cyan-300 transition-colors"
-              aria-label="Email"
-            >
-              <Mail size={18} />
-              <span>kritika.bengaluru@gmail.com</span>
-            </a>
             <a 
               href="https://linkedin.com/in/kritika-sinha" 
               target="_blank" 
