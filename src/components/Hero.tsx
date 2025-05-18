@@ -4,38 +4,38 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative pt-24 pb-16 md:pt-32 md:pb-24 px-4 overflow-hidden">
+    <section id="home" className="relative pt-24 pb-16 md:pt-32 md:pb-24 px-4 overflow-hidden bg-gradient-to-br from-blue-700 via-indigo-600 to-purple-700">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <div className="space-y-2">
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-              Hello, I'm <span className="tech-gradient-text">Kritika Sinha</span>
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight text-white">
+              Hello, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-300">Kritika Sinha</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-100">
               Embedded Systems & AI Engineer
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground mt-2">
+            <p className="text-lg md:text-xl text-gray-200 mt-2">
               Specializing in embedded systems, computer vision, AI, and tech-driven problem solving
             </p>
           </div>
           
           <div className="flex flex-wrap gap-4">
-            <Button asChild size="lg" className="gap-2 group">
+            <Button asChild size="lg" className="gap-2 group bg-white text-blue-700 hover:bg-gray-100">
               <a href="#contact">
                 Get in Touch <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
               <a href="#portfolio">View My Work</a>
             </Button>
           </div>
           
-          <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+          <div className="flex items-center space-x-4 text-sm text-gray-200">
             <span className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-500 rounded-full"></span> 
+              <span className="w-2 h-2 bg-green-400 rounded-full"></span> 
               Available for projects
             </span>
-            <span>•</span>
+            <span className="text-gray-300">•</span>
             <span>Based in Bengaluru</span>
           </div>
         </div>
@@ -43,7 +43,7 @@ const Hero = () => {
         <div className="relative flex justify-center lg:justify-end">
           <div className="relative z-10 w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-xl">
             <img 
-              src="/lovable-uploads/6308e8e5-408c-4b25-9b13-ec63e80aadb9.png"
+              src="https://i.postimg.cc/jdWjmb60/Whats-App-Image-2025-05-18-at-15-54-56-a3674730.jpg"
               alt="Kritika Sinha" 
               className="w-full h-full object-cover"
             />
@@ -53,7 +53,7 @@ const Hero = () => {
           {/* Decorative elements */}
           <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-300/20 rounded-full blur-xl"></div>
           <div className="absolute top-10 -left-10 w-20 h-20 bg-purple-400/30 rounded-full blur-lg"></div>
-          <div className="absolute -top-5 right-10 w-10 h-10 border-2 border-tech-teal rounded-full"></div>
+          <div className="absolute -top-5 right-10 w-10 h-10 border-2 border-cyan-300 rounded-full"></div>
         </div>
       </div>
       
