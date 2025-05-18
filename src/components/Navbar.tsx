@@ -5,7 +5,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true); // Initialize as true for dark mode
   const [isScrolled, setIsScrolled] = useState(false);
   const { toast } = useToast();
 
