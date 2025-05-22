@@ -1,10 +1,12 @@
 
 import { ArrowRight, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AnimatedBackground from "./AnimatedBackground";
 
 const Hero = () => {
   return (
     <section id="home" className="relative pt-24 pb-16 md:pt-32 md:pb-24 px-4 overflow-hidden bg-gradient-to-br from-blue-700 via-indigo-600 to-purple-700">
+      <AnimatedBackground />
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <div className="space-y-2">
