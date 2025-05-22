@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 
 interface Shape {
@@ -15,6 +16,7 @@ const AnimatedBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const shapesRef = useRef<Shape[]>([]);
   const parallaxRef = useRef({ x: 0, y: 0 });
+  const animationRef = useRef<number | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -31,7 +33,7 @@ const AnimatedBackground = () => {
 
     // Initialize shapes
     const initShapes = () => {
-      const shapeCount = Math.max(5, Math.floor(window.innerWidth / 200)); // Responsive shape count
+      const shapeCount = Math.max(10, Math.floor(window.innerWidth / 150)); // More shapes
       const shapes: Shape[] = [];
       
       const colors = ['#9b87f5', '#7E69AB', '#0EA5E9', '#1EAEDB', '#8B5CF6'];
@@ -40,12 +42,12 @@ const AnimatedBackground = () => {
         shapes.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 30 + 20,
+          size: Math.random() * 40 + 20, // Larger shapes
           color: colors[Math.floor(Math.random() * colors.length)],
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
+          vx: (Math.random() - 0.5) * 1.0, // Faster movement
+          vy: (Math.random() - 0.5) * 1.0, // Faster movement
           type: ['circle', 'square', 'triangle'][Math.floor(Math.random() * 3)] as 'circle' | 'square' | 'triangle',
-          opacity: Math.random() * 0.4 + 0.1
+          opacity: Math.random() * 0.5 + 0.2 // Higher opacity
         });
       }
       shapesRef.current = shapes;
@@ -57,7 +59,7 @@ const AnimatedBackground = () => {
       
       ctx.globalAlpha = shape.opacity;
       ctx.fillStyle = shape.color;
-      ctx.shadowBlur = shape.size / 2;
+      ctx.shadowBlur = shape.size; // Increased shadow blur
       ctx.shadowColor = shape.color;
       
       switch (shape.type) {
@@ -96,12 +98,12 @@ const AnimatedBackground = () => {
       // Update and draw shapes
       shapesRef.current.forEach(shape => {
         // Apply parallax effect
-        const parallaxX = parallaxRef.current.x * (shape.size / 50);
-        const parallaxY = parallaxRef.current.y * (shape.size / 50);
+        const parallaxX = parallaxRef.current.x * (shape.size / 40);
+        const parallaxY = parallaxRef.current.y * (shape.size / 40);
         
         // Update position
-        shape.x += shape.vx + parallaxX * 0.01;
-        shape.y += shape.vy + parallaxY * 0.01;
+        shape.x += shape.vx + parallaxX * 0.02;
+        shape.y += shape.vy + parallaxY * 0.02;
         
         // Bounce off edges
         if (shape.x < 0 || shape.x > canvas.width) shape.vx *= -1;
@@ -115,7 +117,7 @@ const AnimatedBackground = () => {
         drawShape(shape);
       });
       
-      requestAnimationFrame(animate);
+      animationRef.current = requestAnimationFrame(animate);
     };
 
     // Handle scroll for parallax
@@ -132,7 +134,7 @@ const AnimatedBackground = () => {
     // Initialize
     resizeCanvas();
     initShapes();
-    animate();
+    animationRef.current = requestAnimationFrame(animate);
 
     // Event listeners
     window.addEventListener('resize', resizeCanvas);
@@ -140,7 +142,12 @@ const AnimatedBackground = () => {
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
 
+    console.log("AnimatedBackground mounted and initialized");
+
     return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('resize', initShapes);
       window.removeEventListener('scroll', handleScroll);
@@ -151,7 +158,7 @@ const AnimatedBackground = () => {
   return (
     <canvas 
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full -z-10"
+      className="fixed inset-0 w-full h-full -z-10" 
       style={{ pointerEvents: 'none' }}
     />
   );
