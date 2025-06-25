@@ -1,5 +1,4 @@
-
-import { Award, BookOpen, Code, Database, User } from "lucide-react";
+import { Award, BookOpen, Code, Database, User, Cpu, Eye } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const About = () => {
@@ -10,19 +9,19 @@ const About = () => {
       items: ["Python", "C/C++", "C#", "R"]
     },
     {
-      category: "Embedded Systems",
-      icon: <Database className="h-6 w-6 text-tech-purple" />,
-      items: ["STM32", "ARM Cortex", "Arduino", "Raspberry Pi"]
+      category: "Embedded & Hardware Skills",
+      icon: <Cpu className="h-6 w-6 text-tech-purple" />,
+      items: ["STM32 Series, ESP32, ARM Cortex", "PCB Designing", "Real-Time Embedded Game on STM32", "GUI Development using Embedded Wizard and TouchGFX", "ADC/DAC and Sensor Integration"]
+    },
+    {
+      category: "Machine Learning & Vision Skills",
+      icon: <Eye className="h-6 w-6 text-tech-pink" />,
+      items: ["Deepfake Detection using CNNs", "OpenCV, Mediapipe", "Rock Fragment Analysis", "Python, TensorFlow, Scikit-learn", "GitHub Projects with Reproducible Code"]
     },
     {
       category: "Education",
-      icon: <BookOpen className="h-6 w-6 text-tech-pink" />,
+      icon: <BookOpen className="h-6 w-6 text-tech-cyan" />,
       items: ["B.Tech in Cyber Physical Systems", "MIT Manipal (2026)"]
-    },
-    {
-      category: "Soft Skills",
-      icon: <User className="h-6 w-6 text-tech-cyan" />,
-      items: ["Strategic Communication", "Team Management", "Problem-solving", "Networking"]
     },
   ];
 
