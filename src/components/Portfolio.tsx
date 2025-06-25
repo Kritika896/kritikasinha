@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { 
   Code, 
@@ -51,7 +50,7 @@ const Portfolio = () => {
       longDescription: "A fully functional classic brick-breaking game developed on the STM32F412G-DISCO development board using Embedded Wizard. The game features paddle control, collision detection, score tracking, and engaging brick-breaking gameplay mechanics, all implemented in a fully embedded graphical environment. This project demonstrates advanced embedded graphics programming and real-time game logic implementation.",
       tech: ["STM32F412G-DISCO", "Embedded Wizard", "Game Development", "Embedded Graphics", "Real-time Systems", "Collision Detection"],
       category: ["embedded", "hardware"],
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
       githubLink: "https://github.com/Kritika896/Brick_game_STM32F412G-DISCO",
       projectLink: null
     },
