@@ -1,28 +1,37 @@
+
 import { Award, BookOpen, Code, Database, User, Cpu, Eye } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const About = () => {
   const skills = [
     {
-      category: "Programming",
+      category: "💻 Technical Skills",
       icon: <Code className="h-6 w-6 text-tech-blue" />,
-      items: ["Python", "C/C++", "C#", "R"]
+      sections: [
+        {
+          title: "Languages & Programming",
+          items: ["Python", "C/C++", "C#", "R"]
+        },
+        {
+          title: "Frameworks & Tools",
+          items: ["TensorFlow", "Keras", "OpenCV", "Scikit-learn", "Mediapipe", "GitHub", "Jupyter", "STM32CubeMX", "KiCad", "Embedded Wizard", "TouchGFX", "STM32CubeIDE"]
+        }
+      ]
     },
     {
-      category: "Embedded & Hardware Skills",
-      icon: <Cpu className="h-6 w-6 text-tech-purple" />,
-      items: ["STM32 Series, ESP32, ARM Cortex", "PCB Designing", "Real-Time Embedded Game on STM32", "GUI Development using Embedded Wizard and TouchGFX", "ADC/DAC and Sensor Integration"]
-    },
-    {
-      category: "Machine Learning & Vision Skills",
-      icon: <Eye className="h-6 w-6 text-tech-pink" />,
-      items: ["Deepfake Detection using CNNs", "OpenCV, Mediapipe", "Rock Fragment Analysis", "Python, TensorFlow, Scikit-learn", "GitHub Projects with Reproducible Code"]
-    },
-    {
-      category: "Education",
-      icon: <BookOpen className="h-6 w-6 text-tech-cyan" />,
-      items: ["B.Tech in Cyber Physical Systems", "MIT Manipal (2026)"]
-    },
+      category: "🧠 Domains of Expertise",
+      icon: <Eye className="h-6 w-6 text-tech-purple" />,
+      sections: [
+        {
+          title: "Embedded Systems & Hardware",
+          items: ["STM32 Series, ESP32, ARM Cortex", "PCB Design", "Sensor Integration", "GUI Development with TouchGFX and Embedded Wizard"]
+        },
+        {
+          title: "Machine Learning & Vision",
+          items: ["CNNs", "Gesture Analysis", "Data Science", "Computer Vision (face recognition, wavelet transforms)"]
+        }
+      ]
+    }
   ];
 
   return (
@@ -73,24 +82,33 @@ const About = () => {
             </div>
           </div>
           
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="flex-1 space-y-6">
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold mb-2">🚀 Skills Overview</h3>
+            </div>
+            
             {skills.map((skill, index) => (
               <Card key={index} className="card-hover">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-xl">
                     {skill.icon}
                     {skill.category}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {skill.items.map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-2">
-                        <span className="h-1.5 w-1.5 bg-primary rounded-full"></span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                <CardContent className="space-y-4">
+                  {skill.sections.map((section, sectionIdx) => (
+                    <div key={sectionIdx}>
+                      <h4 className="font-semibold text-lg mb-2 text-primary">{section.title}</h4>
+                      <ul className="space-y-1">
+                        {section.items.map((item, itemIdx) => (
+                          <li key={itemIdx} className="flex items-start gap-2">
+                            <span className="h-1.5 w-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                            <span className="text-sm">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </CardContent>
               </Card>
             ))}
