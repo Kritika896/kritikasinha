@@ -34,6 +34,28 @@ const Portfolio = () => {
   
   const projects = [
     {
+      id: 10,
+      title: "Smart Power Control System – 30A Home Automation Using ESP32",
+      description: "Custom PCB design for home automation capable of handling high power loads up to 30A",
+      longDescription: "A comprehensive home automation solution featuring a custom PCB design capable of handling high power loads up to 30A using the ESP32 microcontroller. This system enables remote control and energy-efficient smart management of household appliances, providing users with full control over their home's electrical systems through wireless connectivity and intelligent power management.",
+      tech: ["ESP32", "PCB Design", "Home Automation", "Power Electronics", "IoT", "Wireless Control", "Energy Management"],
+      category: ["embedded", "hardware"],
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+      githubLink: "https://github.com/Kritika896/30A_Home_Automation_Using_ESP32",
+      projectLink: null
+    },
+    {
+      id: 11,
+      title: "Retro Brick Blaster – Game on STM32F412G-DISCO",
+      description: "Classic brick-breaking game developed on STM32F412G-DISCO using Embedded Wizard",
+      longDescription: "A fully functional classic brick-breaking game developed on the STM32F412G-DISCO development board using Embedded Wizard. The game features paddle control, collision detection, score tracking, and engaging brick-breaking gameplay mechanics, all implemented in a fully embedded graphical environment. This project demonstrates advanced embedded graphics programming and real-time game logic implementation.",
+      tech: ["STM32F412G-DISCO", "Embedded Wizard", "Game Development", "Embedded Graphics", "Real-time Systems", "Collision Detection"],
+      category: ["embedded", "hardware"],
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
+      githubLink: "https://github.com/Kritika896/Brick_game_STM32F412G-DISCO",
+      projectLink: null
+    },
+    {
       id: 6,
       title: "Stock Price Forecasting with LSTM",
       description: "Deep learning approach to predict stock market trends using LSTM networks",
@@ -265,4 +287,3 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
-

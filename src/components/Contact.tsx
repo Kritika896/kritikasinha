@@ -65,14 +65,14 @@ const Contact = () => {
     {
       icon: <Linkedin className="h-5 w-5" />,
       title: "LinkedIn",
-      value: "linkedin.com/in/kritikasinha",
-      link: "https://linkedin.com/in/kritikasinha"
+      value: "linkedin.com/in/kritika-sinha-14219824b",
+      link: "https://www.linkedin.com/in/kritika-sinha-14219824b/"
     },
     {
       icon: <Github className="h-5 w-5" />,
       title: "GitHub",
-      value: "github.com/kritikasinha",
-      link: "https://github.com/kritikasinha"
+      value: "github.com/Kritika896",
+      link: "https://github.com/Kritika896"
     }
   ];
 
